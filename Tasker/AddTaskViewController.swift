@@ -14,7 +14,8 @@ import CoreData
 class AddTaskViewController: UIViewController {
     var managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
 
-    
+    var task : Tasks? = nil
+
     // IBOutlets
     
     @IBOutlet var uitxtTitle: UITextField!
@@ -29,14 +30,21 @@ class AddTaskViewController: UIViewController {
             uitxtTitle.text = "Enter a fucking Title"
             
         } else{
-            createTask()
+            if task != nil {
+                editTask()
+                
+                switchToTaskListView()
+            }else{
+                createTask()
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TaskListViewController") as! UIViewController
-            presentViewController(vc, animated: false, completion: nil)
+                switchToTaskListView()
+            }
         }
-    
+        
     }
+    
+
+    
     
     @IBAction func uibtnTrash_tap(sender: UIBarButtonItem) {
         uitxtTitle.text = ""
@@ -55,12 +63,25 @@ class AddTaskViewController: UIViewController {
         managedObjectContext.save(nil)
     }
     
+    func editTask() {
+        task?.title = uitxtTitle.text
+        task?.desc = uitxtDesc.text
+        managedObjectContext.save(nil)
+    }
     
+        func switchToTaskListView(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TaskListViewController") as!   UIViewController
+        presentViewController(vc, animated: false, completion: nil)
+    }
     
     //over ridden funcs
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if task != nil {
+            uitxtTitle.text = task?.title
+            uitxtDesc.text = task?.desc
+        }
         // Do any additional setup after loading the view.
     }
 

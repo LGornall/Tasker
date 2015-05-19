@@ -71,6 +71,16 @@ class TaskListViewController: UITableViewController, NSFetchedResultsControllerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "edit" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let taskController:AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+            let task:Tasks = fetchedResultController.objectAtIndexPath(indexPath!) as! Tasks
+            taskController.task = task
+        }
+    }
 
 
 }
