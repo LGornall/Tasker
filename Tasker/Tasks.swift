@@ -14,5 +14,6 @@ class Tasks: NSManagedObject {
 
     @NSManaged var title: String
     @NSManaged var desc: String
-
+    @NSManaged var date: NSDate
+    @NSManaged var completed: Boolean
 }

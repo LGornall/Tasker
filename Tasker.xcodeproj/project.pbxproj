@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,13 @@
 		BF20E04E1B08909800F7D51D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF20E04C1B08909800F7D51D /* LaunchScreen.xib */; };
 		BF20E05A1B08909800F7D51D /* TaskerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20E0591B08909800F7D51D /* TaskerTests.swift */; };
 		BF20E0641B08959600F7D51D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20E0631B08959600F7D51D /* AddTaskViewController.swift */; };
-		BF2F94D51B0A9B4400D5612E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF2F94D41B0A9B4400D5612E /* Entitlements.plist */; };
+		BF306E041B1FAA6B003A9D86 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF306E031B1FAA6B003A9D86 /* Entitlements.plist */; };
+		BF306E081B22F417003A9D86 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF306E071B22F417003A9D86 /* SettingsTableViewController.swift */; };
 		BF3B01FD1B090CFC00DCC777 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B01FC1B090CFC00DCC777 /* Tasks.swift */; };
+		BF6893D71B0CE2D200990EC0 /* TaskTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6893D61B0CE2D200990EC0 /* TaskTableCell.xib */; };
+		BF6893D91B0CE43200990EC0 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6893D81B0CE43200990EC0 /* TaskCell.swift */; };
+		BFC12D131B236E5500245DF2 /* TaskTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC12D121B236E5500245DF2 /* TaskTypes.swift */; };
+		BFC12D151B26271600245DF2 /* AddTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC12D141B26271600245DF2 /* AddTaskTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +47,13 @@
 		BF20E0581B08909800F7D51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF20E0591B08909800F7D51D /* TaskerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerTests.swift; sourceTree = "<group>"; };
 		BF20E0631B08959600F7D51D /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		BF2F94D41B0A9B4400D5612E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		BF306E031B1FAA6B003A9D86 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		BF306E071B22F417003A9D86 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		BF3B01FC1B090CFC00DCC777 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		BF6893D61B0CE2D200990EC0 /* TaskTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableCell.xib; path = ../TaskTableCell.xib; sourceTree = "<group>"; };
+		BF6893D81B0CE43200990EC0 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		BFC12D121B236E5500245DF2 /* TaskTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTypes.swift; sourceTree = "<group>"; };
+		BFC12D141B26271600245DF2 /* AddTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,7 @@
 		BF20E0321B08909800F7D51D = {
 			isa = PBXGroup;
 			children = (
+				BF306E031B1FAA6B003A9D86 /* Entitlements.plist */,
 				BF20E03D1B08909800F7D51D /* Tasker */,
 				BF20E0561B08909800F7D51D /* TaskerTests */,
 				BF20E03C1B08909800F7D51D /* Products */,
@@ -86,14 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				BF20E0401B08909800F7D51D /* AppDelegate.swift */,
-				BF20E0451B08909800F7D51D /* TaskListViewController.swift */,
-				BF3B01FC1B090CFC00DCC777 /* Tasks.swift */,
-				BF20E0631B08959600F7D51D /* AddTaskViewController.swift */,
-				BF20E0471B08909800F7D51D /* Main.storyboard */,
-				BF20E04A1B08909800F7D51D /* Images.xcassets */,
-				BF20E04C1B08909800F7D51D /* LaunchScreen.xib */,
-				BF20E0421B08909800F7D51D /* Tasker.xcdatamodeld */,
-				BF2F94D41B0A9B4400D5612E /* Entitlements.plist */,
+				BF6893DA1B10CBA500990EC0 /* Interfaces */,
+				BF6893DB1B10CBBA00990EC0 /* Controllers */,
+				BF6893DC1B10CBD800990EC0 /* Modal */,
 				BF20E03E1B08909800F7D51D /* Supporting Files */,
 			);
 			path = Tasker;
@@ -102,6 +108,7 @@
 		BF20E03E1B08909800F7D51D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF20E04A1B08909800F7D51D /* Images.xcassets */,
 				BF20E03F1B08909800F7D51D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -122,6 +129,38 @@
 				BF20E0581B08909800F7D51D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF6893DA1B10CBA500990EC0 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				BF20E0471B08909800F7D51D /* Main.storyboard */,
+				BF6893D61B0CE2D200990EC0 /* TaskTableCell.xib */,
+				BF20E04C1B08909800F7D51D /* LaunchScreen.xib */,
+				BF6893D81B0CE43200990EC0 /* TaskCell.swift */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		BF6893DB1B10CBBA00990EC0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF20E0451B08909800F7D51D /* TaskListViewController.swift */,
+				BF20E0631B08959600F7D51D /* AddTaskViewController.swift */,
+				BF306E071B22F417003A9D86 /* SettingsTableViewController.swift */,
+				BFC12D141B26271600245DF2 /* AddTaskTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BF6893DC1B10CBD800990EC0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				BF3B01FC1B090CFC00DCC777 /* Tasks.swift */,
+				BFC12D121B236E5500245DF2 /* TaskTypes.swift */,
+				BF20E0421B08909800F7D51D /* Tasker.xcdatamodeld */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +220,7 @@
 				};
 			};
 			buildConfigurationList = BF20E0361B08909800F7D51D /* Build configuration list for PBXProject "Tasker" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -204,9 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2F94D51B0A9B4400D5612E /* Entitlements.plist in Resources */,
+				BF6893D71B0CE2D200990EC0 /* TaskTableCell.xib in Resources */,
 				BF20E0491B08909800F7D51D /* Main.storyboard in Resources */,
 				BF20E04E1B08909800F7D51D /* LaunchScreen.xib in Resources */,
+				BF306E041B1FAA6B003A9D86 /* Entitlements.plist in Resources */,
 				BF20E04B1B08909800F7D51D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,9 +267,13 @@
 			files = (
 				BF20E0461B08909800F7D51D /* TaskListViewController.swift in Sources */,
 				BF20E0641B08959600F7D51D /* AddTaskViewController.swift in Sources */,
+				BFC12D131B236E5500245DF2 /* TaskTypes.swift in Sources */,
+				BFC12D151B26271600245DF2 /* AddTaskTableViewController.swift in Sources */,
 				BF20E0411B08909800F7D51D /* AppDelegate.swift in Sources */,
 				BF3B01FD1B090CFC00DCC777 /* Tasks.swift in Sources */,
+				BF6893D91B0CE43200990EC0 /* TaskCell.swift in Sources */,
 				BF20E0441B08909800F7D51D /* Tasker.xcdatamodeld in Sources */,
+				BF306E081B22F417003A9D86 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +332,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
@@ -309,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -334,7 +378,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
@@ -349,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -360,7 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
 				INFOPLIST_FILE = Tasker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -373,7 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
 				INFOPLIST_FILE = Tasker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

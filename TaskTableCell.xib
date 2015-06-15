@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskTableCell" id="Mhi-HD-L1B" customClass="TaskCell" customModule="Tasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mhi-HD-L1B" id="bjz-Rd-xSQ">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKw-My-V04">
+                        <rect key="frame" x="8" y="22" width="174" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3DX-GS-5Ta">
+                        <rect key="frame" x="237" y="3" width="75" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="lML-L2-d8Q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HCz-kb-t6p">
+                        <rect key="frame" x="8" y="0.0" width="157" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HCz-kb-t6p" firstAttribute="leading" secondItem="dKw-My-V04" secondAttribute="leading" id="4TE-95-ZAO"/>
+                    <constraint firstItem="3DX-GS-5Ta" firstAttribute="bottom" secondItem="bjz-Rd-xSQ" secondAttribute="bottomMargin" id="4e1-XF-FXZ"/>
+                    <constraint firstItem="3DX-GS-5Ta" firstAttribute="leading" secondItem="HCz-kb-t6p" secondAttribute="trailing" constant="72" id="89A-sh-X7J"/>
+                    <constraint firstItem="HCz-kb-t6p" firstAttribute="leading" secondItem="bjz-Rd-xSQ" secondAttribute="leadingMargin" constant="-7" id="L4B-R2-SVO"/>
+                    <constraint firstItem="HCz-kb-t6p" firstAttribute="baseline" secondItem="3DX-GS-5Ta" secondAttribute="firstBaseline" id="MeA-Kc-8bz"/>
+                    <constraint firstItem="dKw-My-V04" firstAttribute="top" secondItem="HCz-kb-t6p" secondAttribute="bottom" id="Nn4-Zf-b5Y"/>
+                    <constraint firstAttribute="bottom" secondItem="dKw-My-V04" secondAttribute="bottom" id="P7d-tN-m1J"/>
+                    <constraint firstItem="3DX-GS-5Ta" firstAttribute="leading" secondItem="dKw-My-V04" secondAttribute="trailing" constant="55" id="aBj-N9-uha"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3DX-GS-5Ta" secondAttribute="trailing" constant="-7" id="cRo-QO-KC9"/>
+                    <constraint firstItem="3DX-GS-5Ta" firstAttribute="top" secondItem="bjz-Rd-xSQ" secondAttribute="topMargin" constant="-5" id="dVX-Iy-tah"/>
+                    <constraint firstItem="HCz-kb-t6p" firstAttribute="top" secondItem="bjz-Rd-xSQ" secondAttribute="top" id="meJ-Jg-Xh2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="dateLabel" destination="3DX-GS-5Ta" id="3ma-o3-Zup"/>
+                <outlet property="desc" destination="dKw-My-V04" id="rSL-Ag-SNG"/>
+                <outlet property="title" destination="HCz-kb-t6p" id="jk9-cX-WSx"/>
+            </connections>
+            <point key="canvasLocation" x="350" y="222"/>
+        </tableViewCell>
     </objects>
 </document>
