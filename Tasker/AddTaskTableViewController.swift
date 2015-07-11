@@ -2,6 +2,13 @@ import UIKit
 
 class AddTaskTableViewController: UITableViewController {
     
+   
+    
+    
+    
+    
+    
+    
     let kPickerAnimationDuration = 0.40 // duration for the animation to slide the date picker into view
     let kDatePickerTag           = 99   // view tag identifiying the date picker view
     
@@ -9,10 +16,11 @@ class AddTaskTableViewController: UITableViewController {
     let kDateKey  = "date"  // key for obtaining the data source item's date value
     
     // keep track of which rows have date cells
-    let kDateStartRow = 1
-    let kDateEndRow   = 2
+    let kDateStartRow = 2
+    let kDateEndRow   = 3
     
-    let kTaskTitleCellID      = "titleCell"
+    let kTaskTitleCellID  = "titleCell"
+    let kTaskDescCellID   = "descCell"
     
     let kDateCellID       = "dateCell";       // the cells with the start or end date
     let kDatePickerCellID = "datePickerCell"; // the cell containing the date picker
@@ -35,12 +43,12 @@ class AddTaskTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // setup our data source
-        let itemOne = [kTitleKey : "Tap a cell to change its date:"]
-        let itemTwo = [kTitleKey : "Start Date", kDateKey : NSDate()]
-        let itemThree = [kTitleKey : "End Date", kDateKey : NSDate()]
-        let itemFour = [kTitleKey : "(Title)"]
-        let itemFive = [kTitleKey : "(other item2)"]
-        dataArray = [itemOne, itemTwo, itemThree, itemFour, itemFive]
+        let itemOne = [kTitleKey : "(Title)"]
+        let itemTwo = [kTitleKey : "(Desc)"]
+        let itemThree = [kTitleKey : "Start Date", kDateKey : NSDate()]
+        let itemFour = [kTitleKey : "End Date", kDateKey : NSDate()]
+
+        dataArray = [itemOne, itemTwo, itemThree, itemFour]
         
         dateFormatter.dateStyle = .ShortStyle // show short-style date format
         dateFormatter.timeStyle = .ShortStyle
@@ -105,19 +113,6 @@ class AddTaskTableViewController: UITableViewController {
         return hasInlineDatePicker() && datePickerIndexPath?.row == indexPath.row
     }
     
-    
-    func hasInlineUITextField() -> Bool {
-        
-        return taskTitleIndexPath != nil
-    }
-    
-    
-    //determines if the has a textfield
-    func indexPathHasUITextField(indexPath: NSIndexPath) -> Bool{
-        return hasInlineUITextField() && taskTitleIndexPath?.row == indexPath.row
-    }
-    
-    
     /*! Determines if the given indexPath points to a cell that contains the start/end dates.
     
     @param indexPath The indexPath to check if it represents start/end date cell.
@@ -135,7 +130,15 @@ class AddTaskTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return (indexPathHasPicker(indexPath) ? pickerCellRowHeight : tableView.rowHeight)
+        println(indexPath)
+        if indexPath.row == 1 {
+            println("Setting row Heet")
+            return 134
+        } else {
+            return (indexPathHasPicker(indexPath) ? pickerCellRowHeight : tableView.rowHeight)
+        }
+        
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -163,6 +166,7 @@ class AddTaskTableViewController: UITableViewController {
         if indexPathHasPicker(indexPath) {
             // the indexPath is the one containing the inline date picker
             cellID = kDatePickerCellID     // the current/opened date picker cell
+            println("True")
         } else if indexPathHasDate(indexPath) {
             // the indexPath is one that contains the date information
             cellID = kDateCellID       // the start/end date cells
@@ -186,11 +190,12 @@ class AddTaskTableViewController: UITableViewController {
         
         let itemData = dataArray[modelRow]
         
-        println("KtitleKey = \(itemData[kTitleKey])")
+        //println("KtitleKey = \(itemData[kTitleKey]) and it is \(cellID)")
         if itemData[kTitleKey] as! String == "(Title)"{
             cellID = kTaskTitleCellID
+        } else if itemData[kTitleKey] as! String == "(Desc)" {
+            cellID = kTaskDescCellID
         }
-        
         if cellID == kDateCellID {
             // we have either start or end date cells, populate their date field
             //
@@ -201,9 +206,13 @@ class AddTaskTableViewController: UITableViewController {
             //
             cell?.textLabel?.text = itemData[kTitleKey] as? String
         } else if cellID == kTaskTitleCellID {
-            cell = tableView.dequeueReusableCellWithIdentifier("titleCell") as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("titleCell") as? UITableViewCell
+        } else if cellID == kTaskDescCellID {
+            cell = tableView.dequeueReusableCellWithIdentifier("descCell") as? UITableViewCell
         }
-        println(cellID)
+        
+        
+        //println(cellID)
         return cell!
     }
     

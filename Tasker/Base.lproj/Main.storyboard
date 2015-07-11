@@ -182,7 +182,6 @@
         <!--Add Task Table View Controller-->
         <scene sceneID="cf7-v7-O80">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WVg-jL-81q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="EBA-l8-yOj" customClass="AddTaskTableViewController" customModule="Tasker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rJQ-Mr-mIs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -221,13 +220,17 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ABF-ZE-bOc" id="mPa-c2-cUT">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igd-GA-Emg">
-                                            <rect key="frame" x="0.0" y="-1" width="600" height="133.5"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igd-GA-Emg">
+                                            <rect key="frame" x="13" y="0.0" width="574" height="134"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="igd-GA-Emg" firstAttribute="leading" secondItem="mPa-c2-cUT" secondAttribute="leadingMargin" constant="5" id="EWW-UG-1el"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="igd-GA-Emg" secondAttribute="trailing" constant="5" id="R8j-Ap-0cu"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dateCell" textLabel="ev3-91-ghZ" detailTextLabel="ibe-2Y-nun" style="IBUITableViewCellStyleValue1" id="ghT-Fd-EPM">
@@ -295,6 +298,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVg-jL-81q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1646" y="382"/>
         </scene>
